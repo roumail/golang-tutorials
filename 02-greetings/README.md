@@ -63,3 +63,14 @@ This takes us to the next part of the [tutorial](https://go.dev/doc/tutorial/han
 Now we're at the next stage of the [tutorial](https://go.dev/doc/tutorial/random-greeting). Here we adapt our previous scripts to learn the concept of slices and returning a random instance from the slice.
 
 Next, we go to the next stage of the [tutorial](https://go.dev/doc/tutorial/greetings-multiple-people).
+
+In this tutorial, we return a map so our hello function can take a multiple names and return a map where each name is associated with a greeting. Maps are made using the syntax `make(map[key-type]value-type)`.
+
+We also use a for loop, using range on the slice of names, suppressing the first return value of the function in the for loop using `_`.
+
+Links: 
+* https://go.dev/blog/maps
+* https://go.dev/doc/effective_go.html#blank
+
+Next section: Adding a [test](https://go.dev/doc/tutorial/add-a-test)
+
