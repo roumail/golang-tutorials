@@ -80,4 +80,17 @@ Test functions always have the name TestName, where Name is something specific a
 
 Link to testing package docs: https://pkg.go.dev/testing#T.Errorf
 
-Next topic, compiling and installing the package: https://go.dev/doc/tutorial/compile-install 
+Next topic, compiling and installing the package: https://go.dev/doc/tutorial/compile-install
+
+Making the binary can be done using `go build`. However, we need to learn how to add the executable to the go install path so we can run the binary without specifying the path.
+
+`go list -f '{{.Target}}'` can be used to find the go install path.
+
+Next we can add the directory that comes as path of our PATH. 
+
+For example, I have the `/usr/local/go/bin` in my path already so I can use `go env -w GOBIN=/path/to/bin` to set the install path. Note that since i'm using `/usr/local/` I have to do `sudo go install` to be able to place the binary there.
+
+## Next steps
+Links:
+* https://go.dev/doc/modules/managing-dependencies
+* https://go.dev/doc/modules/developing
