@@ -74,3 +74,10 @@ Links:
 
 Next section: Adding a [test](https://go.dev/doc/tutorial/add-a-test)
 
+After creating a file called greetings_test.go, we can now start writing tests. Go's convention for the `go test` command is to have file names ending with `_test.go`. This indicates that the file contains test functions.
+
+Test functions always have the name TestName, where Name is something specific about the test. The functions take a pointer to the `testing` package's test.T type. We use this parameters methods for reporting and logging from our test. 
+
+Link to testing package docs: https://pkg.go.dev/testing#T.Errorf
+
+Next topic, compiling and installing the package: https://go.dev/doc/tutorial/compile-install 
