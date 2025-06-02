@@ -1,0 +1,25 @@
+services:
+  mysql:
+    image: mysql:8.4.5
+    container_name: jazz-mysql
+    restart: unless-stopped
+    environment:
+      MYSQL_ROOT_PASSWORD: rootpassword
+      MYSQL_DATABASE: recordings  
+    ports:
+      - "3306:3306"
+    volumes:
+      - mysql-data:/var/lib/mysql
+      - ./sql-scripts:/docker-entrypoint-initdb.d
+
+  mysql-client:
+    image: mysql:8.4.5
+    entrypoint: ["mysql", "-h", "mysql", "-u", "root", "-prootpassword"]
+    tty: true
+    stdin_open: true
+    depends_on:
+      - mysql
+
+volumes:
+  mysql-data:
+
