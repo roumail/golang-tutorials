@@ -9,7 +9,7 @@ import (
 )
 
 // initial version of the main function, 
-// without the use of numbers verersal
+// without the use of numbers reversal
 // func main() {
 // 	fmt.Println(reverse.String("Hello"))
 // }

@@ -4,11 +4,11 @@ We start by creating `workspace`, `cd` into it and create a new module hello tha
 
 A module is effectively a directory containing a `go.mod` file. 
 
-In our `hello` module we can add a dependency on the `golang.org/x/example/hello/reverse` package by using `go get.` to execute `$ go get golang.org/x/example/hello/reverse`.
+In our `hello` module we can add a dependency on the `golang.org/x/example/hello/reverse` package by using `go get` to execute `$ go get golang.org/x/example/hello/reverse`.
 
 After creating `hello.go` to reverse the string characters, we can run the program using `go run .`.
 
-The workspace itself can be created by running `go work init ./hello` in the workspace directory. This creates a go.work file, which has a syntax, not too different from the typical `go.mod`. 
+The workspace itself can be created by running `go work init ./hello` in the workspace directory. This creates a `go.work` file, which has a syntax, not too different from the typical `go.mod`. Once you've ran `go work init`, the modules in the `hello` directory, become accessible to other modules in the same sub directory.
 
 ```bash
 ❯ tree -C                                                                                                   
@@ -21,12 +21,14 @@ The workspace itself can be created by running `go work init ./hello` in the wor
 
 ```
 The `use` directive tells Go that the module in the hello diretory should be main modules when doing a build. 
+
 ```bash
 # go.work
 go 1.23.4
 
 use ./hello
 ```
+
 This module is therefore active in any subdirectory of workspace.
 
 Running the hello module from the `workspace` can be done using `go run ./hello`, however, we can't run the command outside the workspace doesn't work.
